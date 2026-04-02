@@ -10,11 +10,11 @@
 <img width="98%" src="assets/CMH_examples.jpg"/>
 </div>
 
-## Abstract
+## 📋 Abstract
 
 As AI systems are being integrated more rapidly into diverse and complex real-world environments, the ability to perform holistic reasoning over an implicit query and an image to localize a target is becoming increasingly important. However, recent reasoning segmentation methods fail to sufficiently elicit the visual reasoning capabilities of the base model. In this work, we present Segment Anything Reasoner (StAR), a comprehensive framework that refines the design space from multiple perspectives—including parameter-tuning scheme, reward functions, learning strategies and answer format—and achieves substantial improvements over recent baselines. In addition, for the first time, we successfully introduce parallel test-time scaling to the segmentation task, pushing the performance boundary even further. To eXtend the scope and depth of reasoning covered by existing benchmark, we also construct the ReasonSeg-X, which compactly defines reasoning types and includes samples that require deeper reasoning. Leveraging this dataset, we train StAR with a rollout-expanded selective-tuning approach to activate the base model’s latent reasoning capabilities, and establish a rigorous benchmark for systematic, fine-grained evaluation of advanced methods. With only 5k training samples, StAR achieves significant gains over its base counterparts across extensive benchmarks, demonstrating that our method effectively brings dormant reasoning competence to the surface.
 
-## Highlights
+## 🔥 Highlights
 
 **StAR** presents a comprehensive framework designed to fully exploit the reasoning potential of base MLLMs, thereby improving their versatile segmentation capabilities. We make the following contributions:
 
@@ -34,7 +34,7 @@ We evaluate on the ReasonSeg (RS) series: **RS test** (original), **RS-R** (our 
 </div>
 
 
-## Models
+## 🤖 Models
 
 | Model | Base Model | LoRA Rank | Download |
 |:------|:-----------|:---------:|:--------:|
@@ -43,7 +43,7 @@ We evaluate on the ReasonSeg (RS) series: **RS test** (original), **RS-R** (our 
 | StAR-32B | [Qwen3-VL-32B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct) | 64 | [🤗 HuggingFace](https://huggingface.co/sj9909/StAR-32B) |
 
 
-## Installation
+## ⚙️ Installation
 
 We use two separate environments because Qwen3-VL requires newer versions of `transformers` and `vllm`.
 
@@ -89,7 +89,7 @@ cd sam2/checkpoints && bash download_ckpts.sh && cd ../..
 ```
 
 
-## Inference
+## 🕹️ Inference
 
 Download the pretrained LoRA weights and run inference on your own images:
 
@@ -121,7 +121,7 @@ python inference_scripts/infer_multi_object.py \
 ```
 
 
-## Evaluation
+## 📊 Evaluation
 
 ### Download Evaluation Data
 
@@ -174,10 +174,10 @@ bash evaluation_scripts/eval_refcoco_star_qwen3.sh      # Qwen3-VL
 ```
 
 > [!IMPORTANT]
-> **Batch size affects evaluation results.** Due to batch-level padding influencing the generation behavior, different batch sizes can produce slightly different results. Our reported results use **`batch_size=32`** for 7B/8B models and **`batch_size=1`** for the 32B model. When using majority voting (`--use_majority_voting true`), we use **`batch_size=1`** by default for all models. To reproduce our reported results, please keep these settings unchanged.
+> **Batch size affects evaluation results.** Due to batch-level padding influencing the generation behavior, different batch sizes can produce slightly different results. Our reported results use **`batch_size=32`** for all models. When using majority voting (`--use_majority_voting true`), we use **`batch_size=1`** by default. To reproduce our reported results, please keep these settings unchanged.
 
 
-## Training
+## 🏋️ Training
 
 StAR employs a two-stage RL training via GRPO (Group Relative Policy Optimization).
 
@@ -226,7 +226,7 @@ bash training_scripts/run_star_32b_stage2.sh
 > To use [Weights & Biases](https://wandb.ai) logging, run `wandb login` before training. To disable it, add `export WANDB_MODE=disabled` to the script.
 
 
-## Dataset
+## 📦 Dataset
 
 ### ReasonSeg-X (Proposed)
 
@@ -258,7 +258,7 @@ We also provide the following datasets pre-processed for our evaluation pipeline
 Please refer to our data preparation [tutorial](prepare_dataset/training_data_prepare_toturial.ipynb).
 
 
-## Citation
+## 🎓 Citation
 If this repository helped your work, please give it a star — every StAR🌠 deserves one!
 
 If you find StAR useful in your research, please consider citing:
@@ -273,7 +273,7 @@ If you find StAR useful in your research, please consider citing:
 ```
 
 
-## Acknowledgement
+## 🙏 Acknowledgement
 
 This project builds upon several excellent open-source efforts:
 
@@ -283,3 +283,9 @@ This project builds upon several excellent open-source efforts:
 - [SAM 2](https://github.com/facebookresearch/sam2) — segmentation mask generation
 
 We sincerely thank the authors for making their work publicly available.
+
+---
+
+<p align="center">
+  <em>If this repository helped your work, please give it a star — every StAR🌠 deserves one!</em>
+</p>
