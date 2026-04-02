@@ -1,0 +1,98 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# ===== Environments =====
+.env
+.venv
+env/
+venv/
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== Large data & models (download separately) =====
+data/
+pretrained_models/
+sam2/checkpoints/*.pt
+
+# ===== Training outputs =====
+outputs/
+checkpoints/
+wandb/
+*_workdir/
+*.log
+
+# ===== Experiment files (not for public release) =====
+logs/
+
+# ===== Personal / experimental files =====
+sj_utils/
+sj_lora_path/
+dh_analysis/
+analysis_scripts/
+Seg-Zero/
+
+# ===== Downloaded wheels =====
+*.whl
+*.whl.*
+
+# ===== Ablation / copy / temp variants =====
+*ablation*
+*copy*
+*_temp.py
+*_old.py
+
+# ===== Training scripts not for release =====
+training_scripts/run_visionreasoner_*.sh
+training_scripts/run_slurm_qwen*.sh
+training_scripts/run_slurm_sp.sh
+training_scripts/run_slurm_3b.sh
+training_scripts/model_merger.py
+training_scripts/merge_safetensors.py
+training_scripts/push_data_to_hub.py
+training_scripts/push_model_to_hf.py
+training_scripts/upload_datasets_to_hub.py
+training_scripts/upload_models_to_hub.py
+
+# ===== Evaluation scripts not for release =====
+evaluation_scripts/evaluation.py
+evaluation_scripts/evaluation_star_no_label.py
+evaluation_scripts/evaluation_star_mv.py
+evaluation_scripts/eval_reasonseg_star_h200.sh
+evaluation_scripts/eval_reasonseg_star_no_label.sh
+evaluation_scripts/eval_reasonseg_visionreasoner.sh
+evaluation_scripts/eval_reasonseg.sh
+
+# ===== Misc =====
+[!IMPORTANT]
+
+# ===== Other excluded files =====
+star.yaml
+load_qwen3vl_test.sh
+.pre-commit-config.yaml
+reasonseg_eval_results/
+tmp_model_upload/
+
+# ===== verl variant files not for release =====
+verl/workers/reward/custom_.py
+verl/workers/reward/sam_actor.py
+verl/trainer/sp_ray_trainer_.py
+verl/trainer/sp_ray_trainer_resanything.py
+verl/trainer/sp_ray_trainer_old.py
+verl/workers/rollout/vllm_rollout/vllm_sc_rollout_spmd_temp.py
+verl/utils/reward_score/handle_dataset.ipynb
+verl/utils/proposer_rl_dataset.py
