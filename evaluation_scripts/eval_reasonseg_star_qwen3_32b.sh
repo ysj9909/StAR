@@ -37,7 +37,7 @@ for idx in 0; do
         --visualization false \
         --use_majority_voting false \
         --num_samples 32 \
-        --batch_size 1 &
+        --batch_size 32 &
 done
 
 # Wait for all processes to complete
