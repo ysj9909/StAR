@@ -23,7 +23,7 @@ from omegaconf import OmegaConf
 
 from verl.single_controller.ray import RayWorkerGroup
 from verl.trainer.config import PPOConfig
-from verl.trainer.sp_ray_trainer import SPRayPPOTrainer
+# from verl.trainer.sp_ray_trainer import SPRayPPOTrainer
 from verl.trainer.ray_trainer import RayPPOTrainer, ResourcePoolManager, Role
 from verl.utils import get_processor, get_tokenizer
 from verl.workers.fsdp_workers import FSDPWorker
@@ -98,29 +98,16 @@ def main_task(config: PPOConfig):
     )
     
     resource_pool_manager = ResourcePoolManager(resource_pool_spec=resource_pool_spec, mapping=mapping)
-
-    if config.worker.actor.selfplay.use_selfplay:
-        trainer = SPRayPPOTrainer(
-            config=config,
-            tokenizer=tokenizer,
-            processor=processor,
-            role_worker_mapping=role_worker_mapping,
-            resource_pool_manager=resource_pool_manager,
-            ray_worker_group_cls=ray_worker_group_cls,
-            reward_fn=reward_fn,
-            val_reward_fn=None,
-        )
-    else:
-        trainer = RayPPOTrainer(
-            config=config,
-            tokenizer=tokenizer,
-            processor=processor,
-            role_worker_mapping=role_worker_mapping,
-            resource_pool_manager=resource_pool_manager,
-            ray_worker_group_cls=ray_worker_group_cls,
-            reward_fn=reward_fn,
-            val_reward_fn=None,
-        )
+    trainer = RayPPOTrainer(
+        config=config,
+        tokenizer=tokenizer,
+        processor=processor,
+        role_worker_mapping=role_worker_mapping,
+        resource_pool_manager=resource_pool_manager,
+        ray_worker_group_cls=ray_worker_group_cls,
+        reward_fn=reward_fn,
+        val_reward_fn=None,
+    )
         
     trainer.init_workers()
     
