@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="assets/StAR_.png" width="85" style="vertical-align: middle;"/> StAR: Segment Anything Reasoner
+# <img src="assets/star_image.png" width="80" style="vertical-align: middle;"/> StAR: Segment Anything Reasoner
 
 [[Paper]](https://arxiv.org/abs/2603.14382) [[Models]](https://huggingface.co/sj9909) [[Dataset: ReasonSeg-X]](https://huggingface.co/datasets/sj9909/ReasonSegX_test)
 
@@ -236,7 +236,7 @@ bash training_scripts/run_star_32b_stage2.sh
 <img width="90%" src="assets/reasonseg_x_teaser.jpg"/>
 </div>
 
-| Split | Samples | Download |
+| Split | #Samples | Download |
 |:------|:-------:|:--------:|
 | Train | 240 | [🤗 sj9909/ReasonSegX_train](https://huggingface.co/datasets/sj9909/ReasonSegX_train) |
 | Val | 156 | [🤗 sj9909/ReasonSegX_val](https://huggingface.co/datasets/sj9909/ReasonSegX_val) |
