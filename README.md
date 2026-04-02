@@ -259,7 +259,6 @@ Please refer to our data preparation [tutorial](prepare_dataset/training_data_pr
 
 
 ## 🎓 Citation
-If this repository helped your work, please give it a star — every StAR🌠 deserves one!
 
 If you find StAR useful in your research, please consider citing:
 
